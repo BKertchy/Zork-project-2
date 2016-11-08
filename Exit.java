@@ -38,6 +38,10 @@ public class Exit {
     *@param HashTable<Item,String> isLocked; Item in order to unlock. String that is used
     *when exit is unlocked.
     *@param Boolean isLocked
+    *
+    *@author Jonathan Samuelsen
+    *@author Daniel Zamojda
+    *@author Brendon Kertcher
     */
     Exit(Scanner s, Dungeon d, Boolean isLocked) throws NoExitException,
         Dungeon.IllegalDungeonFormatException {
