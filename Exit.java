@@ -35,8 +35,9 @@ public class Exit {
     * exit is locked (not wanting to disclose the item) or 2. adventurer does not have 
     * required item to access the exit, or 3. it's unlocked and the adventurer
     * can pass.
-    *@param HashTable<Item,String> isLocked
-    *
+    *@param HashTable<Item,String> isLocked; Item in order to unlock. String that is used
+    *when exit is unlocked.
+    *@param Boolean isLocked
     */
     Exit(Scanner s, Dungeon d, Boolean isLocked) throws NoExitException,
         Dungeon.IllegalDungeonFormatException {
@@ -76,7 +77,8 @@ public class Exit {
     /*This method returns a String that was detailed in the constructor commentation.
     * It gets the item from the 'locked' HashTable and checks the GameState.instance()
     * to see if the item is in the adventurers inventory. If so, then it continues on,
-    * if not, it returns a String saying the Adventurer may not pass.
+    * if not, it returns a String saying the Adventurer may not pass. It also changes
+    * the exit's boolean status.
     */
     String isLocked(){}
         
