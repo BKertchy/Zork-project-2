@@ -25,7 +25,20 @@ public class Exit {
         @throws IllegalDungeonFormatException A structural problem with the
         dungeon file itself, detected when trying to read this room.
      */
-    Exit(Scanner s, Dungeon d) throws NoExitException,
+    
+    /*An Exit shall now take a boolean when reading in the files that defines
+    * whether or not the exit can be accessed (is it locked or not?).
+    * For now, a locked exit will be determined to be unlocked by an item being 
+    * in the adventurer's inventory.
+    * Upon being given the command to access an exit, IFF the exit is locked, will
+    * a the Exit class call a method that returns a String saying either 1. the 
+    * exit is locked (not wanting to disclose the item) or 2. adventurer does not have 
+    * required item to access the exit, or 3. it's unlocked and the adventurer
+    * can pass.
+    *@param HashTable<Item,String> isLocked
+    *
+    */
+    Exit(Scanner s, Dungeon d, Boolean isLocked) throws NoExitException,
         Dungeon.IllegalDungeonFormatException {
 
         init();
@@ -59,4 +72,12 @@ public class Exit {
     String getDir() { return dir; }
     Room getSrc() { return src; }
     Room getDest() { return dest; }
+    
+    /*This method returns a String that was detailed in the constructor commentation.
+    * It gets the item from the 'locked' HashTable and checks the GameState.instance()
+    * to see if the item is in the adventurers inventory. If so, then it continues on,
+    * if not, it returns a String saying the Adventurer may not pass.
+    */
+    String isLocked(){}
+        
 }
