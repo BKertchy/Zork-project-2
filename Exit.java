@@ -81,7 +81,7 @@ public class Exit {
     /*This method returns a String that was detailed in the constructor commentation.
     * It gets the item from the 'locked' HashTable and checks the GameState.instance()
     * to see if the item is in the adventurers inventory. If so, then it continues on,
-    * if not, it returns a String saying the Adventurer may not pass. It also changes
+    * if not, it returns a String saying the Adventurer may not pass. It also udpates
     * the exit's boolean status.
     */
     String isLocked(){}
